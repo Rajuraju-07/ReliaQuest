@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>ReliaQuest Careers 2026</title>
+    <link rel="icon"
+type="image/png"
+href="https://res.cloudinary.com/dib2empzv/image/upload/v1781336427/Logo_JZC_vuqm4p.png"/>
+
+    <style>
+  .jb-wrap {
+    --ink: #1f2937;
+    --paper: #FAF6EE;
+    --amber: #E8A33D;
+    --sage: #7A8B6F;
+    --rust: #C1502E;
+    --line: rgba(31,41,55,0.18);
+
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(31,41,55,0.025) 39px, rgba(31,41,55,0.025) 40px);
+    color: var(--ink);
+    padding: 32px 16px 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .jb-header {
+    text-align: center;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .jb-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .jb-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 44px);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 6px;
+  }
+  .jb-sub {
+    font-size: 14px;
+    color: var(--ink);
+    opacity: 0.7;
+    margin: 0;
+  }
+
+.jb-sub-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-size: clamp(20px, 6vw, 22px);
+    font-weight: 700;
+}
+
+  .job-card {
+    position: relative;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px 0 var(--line);
+    overflow: hidden;
+  }
+
+  .job-main { padding: 20px 22px 18px; }
+
+  .job-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+
+  .job-title {
+    font-family: 'Oswald', 'Archivo Black', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+
+  .job-meta {
+    font-size: 13px;
+    color: var(--ink);
+    opacity: 0.75;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .job-meta span::before {
+    content: "— ";
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .job-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Perforated tear line — signature element */
+  .perf {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed var(--ink);
+    opacity: 0.35;
+    margin: 0 22px;
+  }
+  .perf::before, .perf::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    width: 18px;
+    height: 18px;
+    background: var(--paper);
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+  }
+  .perf::before { left: -29px; }
+  .perf::after { right: -29px; }
+
+  .job-stub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px 18px;
+    gap: 12px;
+  }
+  .date{
+grid-column:1/span 2;
+
+color:red;
+font-weight:600;
+}
+
+  .stub-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.55;
+  }
+
+  .apply-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rust);
+    color: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 3px;
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .apply-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--ink);
+    color: #fff;
+  }
+  .apply-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  
+  /* similar jobs */
+
+  .similar-job {
+ 
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+
+}
+  /* OPEN stamp */
+  .stamp {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 5px 10px;
+    border: 2px solid var(--sage);
+    color: var(--sage);
+    border-radius: 3px;
+    transform: rotate(4deg);
+    text-transform: uppercase;
+  }
+
+  /* Filled / closed state */
+  .job-card.filled { opacity: 0.55; }
+  .job-card.filled .stamp {
+    border-color: var(--rust);
+    color: var(--rust);
+    transform: rotate(-3deg);
+  }
+  .job-card.filled .apply-btn {
+    background: #aaa;
+    color: #eee;
+    box-shadow: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .jb-footer {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-top: 24px;
+  }
+    .footer,
+footer p{
+text-align:center !important;
+}
+  .jb-footer a { color: var(--rust); text-decoration: underline; 
+  }
+
+  
+
+  @media (max-width: 480px) {
+    .job-stub { flex-direction: column; align-items: stretch; text-align: center; }
+    .apply-btn { text-align: center; }
+    .perf { margin: 0 18px; }
+    .perf::before { left: -27px; }
+    .perf::after { right: -27px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .apply-btn { transition: none; }
+  }
+
+</style>
+
+       
+</head>
+
+<body>
+
+
+<div class="jb-wrap">
+
+    <!-- =========================
+         Job Header
+    ========================== -->
+
+    <div class="jb-header">
+        <div class="jb-eyebrow">ReliaQuest Careers 2026</div>
+        <h1 class="jb-title">ReliaQuest</h1>
+        <p class="jb-sub">Associate Software Engineer</p>
+    </div>
+
+    <!-- =========================
+         Job Card
+    ========================== -->
+
+    <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+            <a href="#ApplyNow" class="hiring-btn">
+                🚀 Actively Hiring
+            </a>
+
+            <div class="info-item">
+                <span>💻</span>
+                <span>Associate Software Engineer</span>
+            </div>
+
+            <div class="info-item">
+                <span>📍</span>
+                <span>Pune, Bangalore, Hyderabad</span>
+            </div>
+
+            <div class="batch">
+                🎓 2024 / 2025 / 2026
+            </div>
+
+            <div class="posted">
+                💰 ₹8 – ₹14 LPA
+            </div>
+
+            <div class="date">
+                🕒 Posted on : 16-07-2026
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <!-- Job Highlights -->
+
+        <div class="card">
+
+            <h2>Job Highlights</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <strong>Company</strong> : ReliaQuest
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : Associate Software Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Pune / Bangalore / Hyderabad
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–1 Years (Freshers Eligible)
+                </div>
+
+                <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2024 / 2025 / 2026
+                </div>
+
+                <div class="info-box">
+                    <strong>Expected Salary</strong> : ₹8 – ₹14 LPA
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Job Summary -->
+
+        <div class="card">
+
+            <h2>Job Summary</h2>
+
+            <p>
+                ReliaQuest is hiring <strong>Associate Software Engineers</strong>
+                to develop and enhance its GreyMatter cybersecurity platform.
+                You will build scalable microservices, develop REST APIs,
+                automate security workflows, participate in CI/CD pipelines,
+                and collaborate with engineering teams to deliver innovative
+                cloud-based security solutions.
+            </p>
+
+        </div>
+
+        <!-- Educational Qualification -->
+
+        <div class="card">
+
+            <h2>Educational Qualification</h2>
+
+            <ul>
+                <li>B.E. / B.Tech / M.E. / M.Tech in Computer Science, IT or related field.</li>
+                <li>Eligible Batch: 2024 / 2025 / 2026.</li>
+                <li>0–1 years of software development experience.</li>
+                <li>Freshers with strong programming skills are encouraged to apply.</li>
+            </ul>
+
+        </div>
+
+        <!-- Responsibilities -->
+
+        <div class="card">
+
+            <h2>Key Responsibilities</h2>
+
+            <ul>
+                <li>Develop frontend components using HTML, CSS, JavaScript and React.</li>
+                <li>Develop scalable applications using Java, Spring Boot and Microservices.</li>
+                <li>Build REST APIs and integrations for enterprise security platforms.</li>
+                <li>Develop automation for threat detection and response workflows.</li>
+                <li>Manage CI/CD pipelines for application deployment.</li>
+                <li>Perform code reviews and improve software quality.</li>
+                <li>Automate SDLC processes and engineering workflows.</li>
+                <li>Collaborate with cross-functional engineering teams.</li>
+                <li>Support teammates and contribute to an Agile development environment.</li>
+            </ul>
+
+        </div>
+
+        <!-- Required Skills -->
+
+        <div class="card">
+
+            <h2>The everyday hustle</h2>
+
+            <ul>
+                <li>Research and develop creative solutions across a wide range of cutting-edge technologies to continuously evolve our platform, GreyMatter.</li>
+                <li>Create REST API’s and integrations between various products to improve and automate our customer’s threat detection.</li>
+                <li>Manage the continuous integration and deployment processes of complex technologies.</li>
+                <li>Perform code reviews to ensure consistent improvement.</li>
+                <li>Proactively automate and improve all stages of the software development lifecycle.</li>
+                <li>Interface closely with various parts of the business, both internally and externally, to ensure all users are leveraging the product with ease and to its full potential.</li>
+                <li>Provide support to other team members as well as cultivate a culture of constant collaboration.</li>
+            </ul>
+
+        </div>
+
+        <!-- Bonus Skills -->
+
+        <div class="card">
+
+            <h2>Bonus Skills</h2>
+
+            <ul>
+                <li>Elasticsearch</li>
+                <li>Kafka</li>
+                <li>Apache Spark</li>
+                <li>TensorFlow</li>
+                <li>Angular / React</li>
+                <li>AWS / Azure / GCP</li>
+                <li>Unit Testing</li>
+                <li>CI/CD Pipelines</li>
+                <li>Agile Methodology</li>
+            </ul>
+
+        </div>
+
+        <!-- Why Join -->
+
+        <div class="card">
+
+            <h2>Why Join ReliaQuest?</h2>
+
+            <ul>
+                <li>Work on cutting-edge cybersecurity products.</li>
+                <li>Build automation for global enterprise customers.</li>
+                <li>Learn from experienced software engineers.</li>
+                <li>Exposure to cloud-native technologies.</li>
+                <li>Career growth in security engineering.</li>
+                <li>Collaborative engineering culture.</li>
+                <li>Continuous learning and mentoring.</li>
+                <li>Global product development experience.</li>
+            </ul>
+
+        </div>
+
+        <!-- Additional Responsibilities -->
+
+        <div class="card">
+
+            <h2>Additional Engineering Focus</h2>
+
+            <ul>
+                <li>Own AI-assisted article creation workflows from draft to publishing.</li>
+                <li>Enhance TipTap / ProseMirror rich-text editor capabilities.</li>
+                <li>Develop AI-powered editing, formatting and rewriting features.</li>
+                <li>Create reusable branded templates and content systems.</li>
+                <li>Build frontend-first full-stack product features.</li>
+                <li>Improve editor UX, workflows and interaction design.</li>
+            </ul>
+
+        </div>
+
+      <!-- Apply -->
+
+       <div class="perf"></div>
+
+          <div class="job-stub" id="ApplyNow">
+
+
+          </div>
+
+            <!-- Job -1 -->
+
+        <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+           <div class="info-grid">
+            <div class="info-box">
+                    <strong>Company</strong> : ReliaQuest
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : Associate Software Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Pune / Bangalore / Hyderabad
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–1 Years (Freshers Eligible)
+                </div>
+
+                <div class="info-box">
+                    <strong>Eligible Batch</strong> : 2024 / 2025 / 2026
+                </div>
+
+                <div class="info-box">
+                    <strong>Expected Salary</strong> : ₹8 – ₹14 LPA
+                </div>
+
+
+
+
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://reliaquest.wd5.myworkdayjobs.com/ReliaQuest_Careers/job/Pune-India-Office/Associate-Software-Engineer_R15032?source=LinkedIn"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+           <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                 href="https://www.linkedin.com/jobs/view/4441295095/"
+               
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+    </div>
+
+
+    
+       <!-- Job -2 -->
+
+           
+
+
+               <div class="job-card">
+
+        <div class="stamp">
+            OPEN
+        </div>
+
+        <div class="job-main">
+
+           <div class="info-grid">
+
+ <div class="info-box">
+                    <strong>Company</strong> : Clueso
+                </div>
+
+                <div class="info-box">
+                    <strong>Role</strong> : Full Stack Engineer
+                </div>
+
+                <div class="info-box">
+                    <strong>Location</strong> : Bengaluru (On-site)
+                </div>
+
+                <div class="info-box">
+                    <strong>Experience</strong> : 0–2 Years (Freshers Eligible)
+                </div>
+
+              </div>
+            </div>
+
+         <div class="perf"></div>
+
+          <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                href="https://www.clueso.io/careers/full-stack-engineer"
+                target="_blank">
+                  Apply Now
+              </a>
+
+          </div>
+
+                     <div class="job-stub">
+
+              <a class="apply-btn"
+                style="display:table;margin:0 auto;"
+                 href="https://www.linkedin.com/jobs/view/4439932887/"
+               
+                target="_blank">
+                  LinkedIn Page
+              </a>
+
+          </div>
+
+    </div>
+      
+
+        <!-- Disclaimer -->
+
+        <div class="card">
+
+            <h2>📢 Disclaimer</h2>
+
+            <p>
+                This page, <strong>@jobzonecareer</strong>, shares job updates
+                for informational purposes only. We are not affiliated with,
+                endorsed by, or associated with <strong>ReliaQuest</strong>
+                unless explicitly stated.
+            </p>
+
+            <p>
+                We do not charge any fee for job applications, recruitment,
+                or placement assistance. Always apply through the official
+                ReliaQuest Careers website and beware of fraudulent job offers
+                requesting payment or personal information.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Paste your complete HTML here -->
+
+</body>
+</html>
